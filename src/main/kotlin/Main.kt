@@ -1,8 +1,8 @@
 
 fun main() {
 
-    println("======================== Test 1 ========================")
-    println("Check validator")
+    println("\n======================== Test 1 ========================")
+    println("Check validator\n")
     val rules = mutableListOf(RuleUpperLower(), RuleNumSpec(),
             RuleEntropyLevel(40.0), RulePasswordLen(8),
             RuleVocabularyWords("E:\\pswd-dict.txt"))
@@ -11,8 +11,8 @@ fun main() {
     validator.checkPassword("cjyAb'hbfB")
     validator.checkPassword("cjyb'h0brAjy")
 
-    println("======================== Test 2 ========================")
-    println("Check validator exceptions")
+    println("\n======================== Test 2 ========================")
+    println("Check validator exceptions\n")
     try {
         val r2 = rules.map { it }.toMutableList()
         r2.add(RuleEntropyLevel(40.0))
@@ -30,6 +30,5 @@ fun main() {
             println(e.message)
         }
     }
-
 
 }
